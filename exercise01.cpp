@@ -2,6 +2,9 @@
 //
 // File: exercise01.cpp
 // Author(s):
+//            Naomi Estefanía Nieto Vega - A01706095
+//            Emiliano Mendoza Nieto - A01706083
+//
 // Description: This file contains the code to count the number of
 //				even numbers within an array. The time this implementation
 //				takes will be used as the basis to calculate the
@@ -26,21 +29,16 @@ using namespace std;
 // implement your code here
 //***************************************************
 double countEven(int arr[], int size){
-
     int cont = 0;
 
     for (int i=1; i<=size; i++) {
-
       if(arr[i]%2 == 0) {
-
         cont = cont + 1;
       }
     }
-
 return cont;
 }
 //***************************************************
-
 
 int main(int argc, char* argv[]) {
 	int *a;

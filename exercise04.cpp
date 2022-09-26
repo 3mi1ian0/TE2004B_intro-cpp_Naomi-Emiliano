@@ -26,12 +26,12 @@ using namespace std;
 
 // implement your code here
 //***************************************************
-double CalculoPi(int nter)
-{
+double CalculoPi(int nter) {
     double sum = 0.0;
 
-    for (int i=1; i<=nter; i++)
+    for (int i=1; i<=nter; i++) {
       sum = sum + 1/pow(i,2);
+    }  
 return sqrt(6*sum);
 }
 //***************************************************

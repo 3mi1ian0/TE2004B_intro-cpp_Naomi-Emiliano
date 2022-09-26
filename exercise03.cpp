@@ -2,6 +2,9 @@
 //
 // File: exercise03.cpp
 // Author(s):
+//            Naomi Estefanía Nieto Vega - A01706095
+//            Emiliano Mendoza Nieto - A01706083
+//
 // Description: This file contains the code that implements the
 //				enumeration sort algorithm. The time this implementation
 //				takes ill be used as the basis to calculate the
@@ -25,8 +28,7 @@ using namespace std;
 // implement your code here
 //***************************************************
 // A utility function to swap two elements
-void swap(int* a, int* b)
-{
+void swap(int* a, int* b) {
     int t = *a;
     *a = *b;
     *b = t;
@@ -37,8 +39,7 @@ the pivot element at its correct position in sorted
 array, and places all smaller (smaller than pivot)
 to left of pivot and all greater elements to right
 of pivot */
-int partition(int arr[], int low, int high)
-{
+int partition(int arr[], int low, int high) {
     int pivot = arr[high]; // pivot
     int i
         = (low
@@ -60,8 +61,7 @@ int partition(int arr[], int low, int high)
 arr[] --> Array to be sorted,
 low --> Starting index,
 high --> Ending index */
-void quickSort(int arr[], int low, int high)
-{
+void quickSort(int arr[], int low, int high) {
     if (low < high) {
         /* pi is partitioning index, arr[p] is now
         at right place */
@@ -74,11 +74,8 @@ void quickSort(int arr[], int low, int high)
     }
 }
 
-
-
 /* Function to print an array */
-void printArray(int arr[], int size)
-{
+void printArray(int arr[], int size) {
     int i;
     for (i = 0; i < size; i++)
         cout << arr[i] << " ";

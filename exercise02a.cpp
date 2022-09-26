@@ -2,6 +2,9 @@
 //
 // File: exercise02.cpp
 // Author(s):
+//            Naomi Estefanía Nieto Vega - A01706095
+//            Emiliano Mendoza Nieto - A01706083
+//
 // Description: This file contains the code that performs the sum of
 //				all prime numbers less than or equal to MAXIMUM. The
 //				time this implementation takes will be used as the
@@ -53,8 +56,6 @@ int main(int argc, char* argv[]) {
 	int i;
 	double ms;
   unsigned long long int result = 0;
-	//unsigned long long int sum = 2;
-
 
 	cout << "Starting..." << endl;
 	ms = 0;
@@ -62,8 +63,6 @@ int main(int argc, char* argv[]) {
 		start_timer();
 		// call your code here.
 		result = SieveOfEratosthenes(MAXIMUM);
-
-
 		ms += stop_timer();
 	}
 
