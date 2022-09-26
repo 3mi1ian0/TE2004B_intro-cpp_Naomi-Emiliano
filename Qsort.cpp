@@ -1,29 +1,11 @@
-// =================================================================
-//
-// File: exercise03.cpp
-// Author(s):
-// Description: This file contains the code that implements the
-//				enumeration sort algorithm. The time this implementation
-//				takes ill be used as the basis to calculate the
-//				improvement obtained with parallel technologies.
-//
-// Copyright (c) 2022 by Tecnologico de Monterrey.
-// All Rights Reserved. May be reproduced for any non-commercial
-// purpose.
-//
-// =================================================================
-
-#include <iostream>
-#include <iomanip>
-#include <cstring>
+/* C++ implementation of QuickSort */
+#include <bits/stdc++.h>
 #include "utils.h"
-
-const int SIZE = 200000; //1e4
 
 using namespace std;
 
-// implement your code here
-//***************************************************
+const int SIZE = 50; //1e4
+
 // A utility function to swap two elements
 void swap(int* a, int* b)
 {
@@ -74,8 +56,6 @@ void quickSort(int arr[], int low, int high)
     }
 }
 
-
-
 /* Function to print an array */
 void printArray(int arr[], int size)
 {
@@ -84,30 +64,26 @@ void printArray(int arr[], int size)
         cout << arr[i] << " ";
     cout << endl;
 }
-//***************************************************
 
-int main(int argc, char* argv[]) {
-	int *a;
-	double ms;
+// Driver Code
+int main()
+{
+    int *a;
+    a = new int[SIZE];
+    random_array(a, SIZE);
+    //int arr[] = { 10, 7, 8, 9, 1, 5 };
+    //int n = sizeof(arr) / sizeof(arr[0]);
+    cout << "Random array: \n";
+    printArray(a, SIZE);
+    cout << " \n";
 
-	a = new int[SIZE];
-	random_array(a, SIZE);
-	display_array("before", a);
+    // quickSort(arr, 0, n - 1);
+    quickSort(a, 0, SIZE - 1);
+    cout << "Sorted array: \n";
+    // printArray(arr, n);
+    printArray(a, SIZE);
 
-	cout << "Starting..." << endl;
-	ms = 0;
-	// create object here
-	for (int i = 0; i < N; i++) {
-		start_timer();
-
-		// call your code here.
-		quickSort(a, 0, SIZE - 1);
-
-		ms += stop_timer();
-	}
-	display_array("after", a);
-	cout << "avg time = " << setprecision(5) << (ms / N) << " ms" << endl;
-
-	delete [] a;
-	return 0;
+    return 0;
 }
+
+// This code is contributed by rathbhupendra

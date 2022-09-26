@@ -24,10 +24,28 @@ const int SIZE = 100000000; //1e8
 using namespace std;
 
 // implement your code here
+//***************************************************
+double countEven(int arr[], int size){
+
+    int cont = 0;
+
+    for (int i=1; i<=size; i++) {
+
+      if(arr[i]%2 == 0) {
+
+        cont = cont + 1;
+      }
+    }
+
+return cont;
+}
+//***************************************************
+
 
 int main(int argc, char* argv[]) {
 	int *a;
 	double ms;
+	int result = 0;
 
 	a = new int[SIZE];
 	fill_array(a, SIZE);
@@ -39,6 +57,7 @@ int main(int argc, char* argv[]) {
 		start_timer();
 
 		// call your code here
+		result = countEven(a, SIZE);
 
 		ms += stop_timer();
 	}

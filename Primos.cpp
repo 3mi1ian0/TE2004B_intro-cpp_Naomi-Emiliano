@@ -1,33 +1,9 @@
-// =================================================================
-//
-// File: exercise02.cpp
-// Author(s):
-// Description: This file contains the code that performs the sum of
-//				all prime numbers less than or equal to MAXIMUM. The
-//				time this implementation takes will be used as the
-//				basis to calculate the improvement obtained with
-//				parallel technologies.
-//
-// Copyright (c) 2022 by Tecnologico de Monterrey.
-// All Rights Reserved. May be reproduced for any non-commercial
-// purpose.
-//
-// =================================================================
 
-#include <iostream>
-#include <iomanip>
-#include <cstring>
-#include <cmath>
-#include <algorithm>
-#include "utils.h"
+// C++ STL program to print all primes
+// in a range using Sieve of Eratosthenes
 #include<bits/stdc++.h>
-
-#define MAXIMUM 1000000 //1e6
-
 using namespace std;
 
-// implement your code here
-//***************************************************
 typedef unsigned long long int ulli;
 
 vector<ulli> sieve(ulli n)
@@ -94,33 +70,24 @@ vector<ulli> sieveRange(ulli start,ulli end)
 
     return ans;
 }
-//***************************************************
 
-int main(int argc, char* argv[]) {
-	int i;
-	double ms;
-
-	unsigned long long int result = 2;
-	ulli start = 3;
-	ulli end = MAXIMUM;
-
-	cout << "Starting..." << endl;
-	ms = 0;
-	for (int i = 0; i < N; i++) {
-		start_timer();
-		// call your code here.
-		vector<ulli> ans = sieveRange(start,end);
-		for (auto i:ans)
+// Driver Program to test above function
+int main(void)
+{
+    unsigned long long int sum = 2;
+    ulli start = 3;
+    ulli end = 200;
+    cout << "Da el número hasta donde quieres calcular los primos ";
+    cin >> end;
+    vector<ulli> ans = sieveRange(start,end);
+    cout << "Los números primos desde 0 hasta " << end << " son: "<< "\n";
+    for (auto i:ans)
     {
       //cout<<i<<"\n";
-      result = result + i;
+      sum = sum + i;
     }
-
-		ms += stop_timer();
-	}
-	result = result + (N-1)*2;
-	cout << "result = " << setprecision(5) << result << "\n";
-	cout << "avg time = " << setprecision(5) << (ms / N) << " ms" << endl;
-
-	return 0;
+    cout << "\n\n";
+    cout << sum;
+    cout << "\n\n";
+    return 0;
 }

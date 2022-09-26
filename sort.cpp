@@ -1,29 +1,7 @@
-// =================================================================
-//
-// File: exercise03.cpp
-// Author(s):
-// Description: This file contains the code that implements the
-//				enumeration sort algorithm. The time this implementation
-//				takes ill be used as the basis to calculate the
-//				improvement obtained with parallel technologies.
-//
-// Copyright (c) 2022 by Tecnologico de Monterrey.
-// All Rights Reserved. May be reproduced for any non-commercial
-// purpose.
-//
-// =================================================================
-
-#include <iostream>
-#include <iomanip>
-#include <cstring>
-#include "utils.h"
-
-const int SIZE = 200000; //1e4
-
+/* C++ implementation of QuickSort */
+#include <bits/stdc++.h>
 using namespace std;
 
-// implement your code here
-//***************************************************
 // A utility function to swap two elements
 void swap(int* a, int* b)
 {
@@ -74,40 +52,34 @@ void quickSort(int arr[], int low, int high)
     }
 }
 
-
-
 /* Function to print an array */
 void printArray(int arr[], int size)
 {
     int i;
     for (i = 0; i < size; i++)
-        cout << arr[i] << " ";
+        cout << i << "\t" << arr[i] << "\n";
     cout << endl;
 }
-//***************************************************
 
-int main(int argc, char* argv[]) {
-	int *a;
-	double ms;
+// Driver Code
+int main()
+{
 
-	a = new int[SIZE];
-	random_array(a, SIZE);
-	display_array("before", a);
+    const int SIZE = 20; //1e4
+    int arr[] = {1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9,1,2};
+    srand(time(0));
 
-	cout << "Starting..." << endl;
-	ms = 0;
-	// create object here
-	for (int i = 0; i < N; i++) {
-		start_timer();
+    for (int i = 0; i <= 20; i++) {
 
-		// call your code here.
-		quickSort(a, 0, SIZE - 1);
+      //cout << rand() % 100 << "\n";
+      arr[i] = rand();
+    }
 
-		ms += stop_timer();
-	}
-	display_array("after", a);
-	cout << "avg time = " << setprecision(5) << (ms / N) << " ms" << endl;
-
-	delete [] a;
-	return 0;
+    int n = sizeof(arr) / sizeof(arr[0]);
+    quickSort(arr, 0, n - 1);
+    cout << "Sorted array: \n";
+    printArray(arr, n);
+    return 0;
 }
+
+// This code is contributed by rathbhupendra
