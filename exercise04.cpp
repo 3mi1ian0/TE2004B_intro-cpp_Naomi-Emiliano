@@ -31,7 +31,7 @@ double CalculoPi(int nter) {
 
     for (int i=1; i<=nter; i++) {
       sum = sum + 1/pow(i,2);
-    }  
+    }
 return sqrt(6*sum);
 }
 //***************************************************
@@ -52,7 +52,7 @@ int main(int argc, char* argv[]) {
 
 		ms += stop_timer();
 	}
-	cout << "result = " << setprecision(5) << result << "\n";
+	cout << "result = " << setprecision(40) << result << "\n";
 	cout << "avg time = " << setprecision(5) << (ms / N) << " ms" << endl;
 
 	return 0;
